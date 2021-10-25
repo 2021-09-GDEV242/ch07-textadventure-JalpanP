@@ -19,7 +19,8 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-        
+    
+    
     /**
      * Create the game and initialise its internal map.
      */
@@ -164,6 +165,29 @@ public class Game
         }
     }
 
+    void lookRoom(Command command)
+    {
+        if(command.hasSecondWord())
+        {
+            System.out.println("Look what?");
+            return;
+        }
+        System.out.println(currentRoom.getLongDescription());
+    }
+    
+    void eat(Command command)
+    {
+        if(command.hasSecondWord())
+        {
+            System.out.println("eat what?");
+            return;
+        }
+        System.out.println("you have eaten and are no longer hungry.");
+    }
+    
+    
+    
+    
     /** 
      * "Quit" was entered. Check the rest of the command to see
      * whether we really quit the game.
